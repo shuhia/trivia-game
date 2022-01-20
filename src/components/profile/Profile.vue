@@ -1,12 +1,3 @@
-<template>
-  <div class="Profile">
-    <h1>Your Name</h1>
-    <button @click="handleClick">Show ProfilePhoto</button>
-    <ProfilePhoto v-show="showProfile"></ProfilePhoto>
-    <ProfileInformation></ProfileInformation>
-  </div>
-</template>
-
 <script setup>
 import ProfileInformation from "./ProfileInformation.vue";
 import ProfilePhoto from "./ProfilePhoto.vue";
@@ -17,6 +8,11 @@ const handleClick = () => {
   showProfile.value = !showProfile.value;
   console.log("Button was clicked");
 };
+const profile = {
+  name: "Alex",
+  information: { interest: "Gaming" },
+};
+
 onMounted(() => {
   console.log("Profile is mounted");
 });
@@ -28,5 +24,14 @@ onUpdated(() => {
   console.log("Profile is updated");
 });
 </script>
+
+<template>
+  <div class="Profile">
+    <h1>{{ profile.name }}</h1>
+    <button @click="handleClick">Show ProfilePhoto</button>
+    <ProfilePhoto v-show="showProfile"></ProfilePhoto>
+    <ProfileInformation :information="profile.information"></ProfileInformation>
+  </div>
+</template>
 
 <style></style>

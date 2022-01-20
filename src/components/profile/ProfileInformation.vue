@@ -1,3 +1,13 @@
+<script setup>
+const name = "Trivia Game";
+const props = defineProps({
+  information: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
 <template>
   <div class="profile-information">
     <h2>About {{ name }}</h2>
@@ -9,14 +19,6 @@
     {{ name }}
   </div>
 </template>
-
-<script setup>
-const name = "Trivia Game";
-const information = {
-  interests: "Gaming",
-  favoriteQuote: "Takes courage to give up",
-};
-</script>
 
 <style scoped>
 .information {
