@@ -3,6 +3,9 @@ import ProfileInformation from "./ProfileInformation.vue";
 import ProfilePhoto from "./ProfilePhoto.vue";
 import { onUpdated, onMounted, onUnmounted } from "vue";
 import { ref } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+const name = route.params.name;
 const showProfile = ref(false);
 const handleClick = () => {
   showProfile.value = !showProfile.value;
@@ -10,7 +13,7 @@ const handleClick = () => {
   console.log(args);
 };
 const profile = {
-  name: "Alex",
+  name: name || "Alex",
   information: { interest: "Gaming" },
 };
 
