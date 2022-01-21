@@ -1,23 +1,12 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-router.push("/");
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <nav>
-      <router-link to="/" active-class="active">Home</router-link>
-      <router-link to="/profile/alex-on" active-class="active"
-        >Profile</router-link
-      >
-    </nav>
-  </header>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <router-view></router-view>
+  <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <style>
