@@ -30,3 +30,17 @@ export async function resetSessionToken(token = this.token) {
     const data = response.data;
   } catch (error) {}
 }
+
+export async function getCategories() {
+  const path = "api_category.php";
+  const url = BASE_URL + path;
+  try {
+    const response = await axios.get(url);
+    const data = response.data;
+  } catch (error) {}
+}
+
+export async function getQuestions(categoryId) {
+  const path = `api_count.php?category=${categoryId}`;
+  const url = BASE_URL + path;
+}
