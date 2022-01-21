@@ -1,10 +1,3 @@
-<div id="wishes">
-  <ul>
-  <li> The order of tags in all vue components should be in the order: Script, Template and Style
-  </li>
-  </ul>
-</div>
-
 <div id="top"></div>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
